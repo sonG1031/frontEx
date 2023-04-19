@@ -2,7 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return <h1>Learn React</h1>
+  const hobby = ["Sports", "Music", "Movie"];
+  const hobbyList = hobby.map(hobby => <li>{hobby}</li>);
+  console.log(hobbyList);
+  return (
+    <ul>{hobbyList}</ul>
+  );
 }
 
 export default App;
