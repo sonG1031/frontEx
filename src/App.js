@@ -2,11 +2,25 @@
 import './App.css';
 
 function App() {
-  const hobby = ["Sports", "Music", "Movie"];
-  const hobbyList = hobby.map((hobby, index) => <li key={index}>{hobby}</li>);
-  console.log(hobbyList);
+  const code="01"
+  let nationality = "None"
+
+  if (code === "01") {
+    nationality = "korea"
+  }
+  else if (code === "02") {
+    nationality = "China"
+  }
+  else if (code === "03") {
+    nationality = "Japan"
+  }
+  else {
+    nationality = "..."
+  }
   return (
-    <ul>{hobbyList}</ul>
+    <div>
+      <h1>Minsub's nationality is {nationality}</h1>
+    </div>
   );
 }
 
