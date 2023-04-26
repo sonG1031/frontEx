@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useState } from "react";
 
 const App = () => {
@@ -20,9 +21,14 @@ const App = () => {
     ]
     
     const [items, setItems] = useState(itemDataArray);
-    const totalprice = items.reduce(function(sum,item) {
-      return sum + item.price * item.quantity
-    }, 0);
+
+    const calctotalPrice = (items) => {
+      return  items.reduce(function(sum,item) {
+        return sum + item.price * item.quantity
+      }, 0);
+    };
+    
+    const totalPrice = useMemo(()=> calctotalPrice(items),[items]);
 
     return (
       <>
@@ -33,7 +39,7 @@ const App = () => {
           </li>
         ))}
        </ul>
-       <p>합계: {totalprice}원</p>
+       <p>합계: {totalPrice}원</p>
       </>
     )
 };
