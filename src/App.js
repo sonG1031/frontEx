@@ -1,12 +1,13 @@
 import React from "react";
 import Hello from "./Hello";
+import Wrapper from "./Wrapper";
 
 function App() {
   return (
-    <>
-      <Hello name="송민섭" color="red"/>
+    <Wrapper>
+      <Hello name="송민섭" color="red" isSpecial={true}/>
       <Hello color="green"/>
-    </>
+    </Wrapper>
   )
 }
 
